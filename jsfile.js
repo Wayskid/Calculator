@@ -152,7 +152,7 @@ const clickBspace = btnBspace.addEventListener("click", inputBspace);
 let ans;
 
 const clickEquals = btnEquals.addEventListener("click", function () {
-  if (inputDisplay.value.includes(Number && "+")) {
+  if (inputDisplay.value.includes(!NaN && "+") || inputDisplay.value.includes(!NaN && "-") || inputDisplay.value.includes(!NaN && "/") || inputDisplay.value.includes(!NaN && "*")){
     console.log(inputDisplay.value);
     const ans = eval(inputDisplay.value);
     console.log(ans);
