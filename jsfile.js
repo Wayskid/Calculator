@@ -44,6 +44,9 @@ let multiplyValue = document.querySelector(".btnMultiply").textContent;
 let btnDivide = document.querySelector(".btnDivide");
 let divideValue = document.querySelector(".btnDivide").textContent;
 
+let btnExpo = document.querySelector(".btnExpo");
+let expoValue = document.querySelector(".btnExpo").textContent;
+
 let btnClearAll = document.querySelector(".btnClearAll");
 let clearAllValue = document.querySelector(".btnClearAll").textContent;
 
@@ -136,6 +139,12 @@ function inputDivide() {
 }
 const clickDivide = btnDivide.addEventListener("click", inputDivide);
 
+// EXPO
+function inputExpo() {
+  inputDisplay.value += expoValue;
+}
+const clickExpo = btnExpo.addEventListener("click", inputExpo);
+
 // CLEAR ALL
 function inputClearAll() {
   inputDisplay.value = "";
@@ -144,7 +153,7 @@ const clickClearAll = btnClearAll.addEventListener("click", inputClearAll);
 
 // BACKSPACE
 function inputBspace() {
-  inputDisplay.value.length - 1;
+  inputDisplay.value.removeValue(inputDisplay.value.lastElementChild);
 }
 const clickBspace = btnBspace.addEventListener("click", inputBspace);
 
@@ -154,11 +163,13 @@ let ans;
 const clickEquals = btnEquals.addEventListener("click", function () {
   if (inputDisplay.value.includes(!NaN && "+") || inputDisplay.value.includes(!NaN && "-") || inputDisplay.value.includes(!NaN && "/") || inputDisplay.value.includes(!NaN && "*")){
     console.log(inputDisplay.value);
-    const ans = eval(inputDisplay.value);
+    ans = eval(inputDisplay.value);
     console.log(ans);
     inputDisplay.value = ans;
   } else {
       const errorMes = (inputDisplay.value = `Please insert an Equation`);
       setTimeout(inputClearAll, 500);
   }
-});
+})
+
+
