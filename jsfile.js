@@ -151,11 +151,7 @@ function inputClearAll() {
 }
 const clickClearAll = btnClearAll.addEventListener("click", inputClearAll);
 
-// BACKSPACE
-function inputBspace() {
-  inputDisplay.value.removeValue(inputDisplay.value.lastElementChild);
-}
-const clickBspace = btnBspace.addEventListener("click", inputBspace);
+
 
 // CLICK EQUALS BTN
 let ans;
@@ -173,3 +169,9 @@ const clickEquals = btnEquals.addEventListener("click", function () {
 })
 
 
+
+
+btnBspace.addEventListener("click", () => {
+  let screenVal = inputDisplay.value;
+  inputDisplay.value = screenVal.substr(0, screenVal.length - 1);
+});
